@@ -1,0 +1,11 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  background-color: var(--background-color);
+}
+
+body.modal-open {
+  overflow: hidden;
+}

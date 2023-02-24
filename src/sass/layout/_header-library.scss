@@ -1,0 +1,145 @@
+.container-header {
+  width: 100%;
+}
+
+.header-library {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+
+  height: 230px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-color: #303030;
+  opacity: 0.9;
+
+  box-shadow: -5px 10px 15px -6px var(--button-activ-color);
+
+  @media screen and (max-width: #{$tablet - 1}) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('/src/images/background/Rectangle-1x-mobile.jpg');
+
+    @media screen and (min-device-pixel-ratio: 2) and (max-width: #{$tablet - 1}),
+      screen and (min-resolution: 192dpi) and (max-width: #{$tablet - 1}),
+      screen and (min-resolution: 2dppx) and (max-width: #{$tablet - 1}) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url('/src/images/background/Rectangle-2x-mobile.jpg');
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('/src/images/background/Rectangle-1x-tablet.jpg');
+
+    @media screen and (min-device-pixel-ratio: 2) and (min-width: $tablet),
+      screen and (min-resolution: 192dpi) and (min-width: $tablet),
+      screen and (min-resolution: 2dppx) and (min-width: $tablet) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url('/src/images/background/Rectangle-2x-tablet.jpg');
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('/src/images/background/Rectangle-1x-desktop.jpg');
+
+    @media screen and (min-device-pixel-ratio: 2) and (min-width: $desktop),
+      screen and (min-resolution: 192dpi) and (min-width: $desktop),
+      screen and (min-resolution: 2dppx) and (min-width: $desktop) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url('/src/images/background/Rectangle-2x-desktop.jpg');
+    }
+  }
+}
+
+.header__button-wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+  @media screen and (min-width: $tablet) {
+    gap: 32px;
+  }
+  @media screen and (min-width: $desktop) {
+    gap: 16px;
+  }
+}
+
+.header__button {
+  width: 130px;
+  height: 44px;
+
+  @media screen and (min-width: $tablet) {
+    width: 152px;
+    height: 44px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 147px;
+    height: 42px;
+  }
+  text-transform: uppercase;
+}
+
+.activ:hover {
+  box-shadow: 0 0 0 18px transparent;
+  animation: pulse 1s;
+}
+
+.current-btn {
+  background-color: var(--button-activ-color);
+  border: 1px solid var(--button-activ-color);
+  filter: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
+}
+
+.switch-library {
+  margin-top: -80px;
+  @media screen and (min-width: $tablet) {
+    margin-top: 0px;
+  }
+}
+
+.youtube-modal {
+  border-radius: 5px;
+  box-shadow: 0px 5px 22px 2px rgb(255 107 1 / 60%);
+  min-width: 280px;
+  min-height: 166px;
+
+  @media screen and (min-width: 768px) and (max-width: 1279.98px) {
+    min-width: 650px;
+    min-height: 400px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    min-width: 1000px;
+    min-height: 595px;
+  }
+}

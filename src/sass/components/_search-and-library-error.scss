@@ -1,0 +1,123 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px 0;
+
+  @media screen and (min-width: $tablet) {
+    // padding: 20px 0;
+    // min-height: 65vh;
+  }
+
+  @media screen and (min-width: $desktop) {
+    min-height: 69vh;
+  }
+}
+
+.no-display {
+  display: none;
+}
+
+.error__img {
+  max-height: 150px;
+
+  @media screen and (min-width: $tablet) {
+    // max-width: 350px;
+    max-height: 300px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-height: 200px;
+  }
+}
+
+.error__text {
+  color: #ff001b;
+  text-shadow: #fff 1px 0 0px, #fff 0 1px 0px, #fff -1px 0 0px, #fff 0 -1px 0px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media screen and (min-width: $mobile) {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 35px;
+    margin-bottom: 25px;
+  }
+}
+
+.error__span {
+  text-transform: capitalize;
+}
+
+.error-btn {
+  width: 100px;
+  height: 35px;
+  padding: 10px;
+
+  @media screen and (min-width: $tablet) {
+    width: 150px;
+    height: 55px;
+    font-size: 18px;
+  }
+
+  transition: color 250ms var(--time-function),
+    background-color 250ms var(--time-function);
+
+  &:hover,
+  &:focus {
+    background-color: var(--primary-white-color);
+    color: var(--button-activ-color);
+    filter: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
+  }
+}
+
+.btn-box {
+  display: flex;
+  gap: 35px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+
+  @media screen and (min-width: $tablet) {
+    gap: 100px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 60px;
+    margin-top: 15px;
+  }
+}
+.signs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  width: 95px;
+  height: 30px;
+
+  @media screen and (min-width: $tablet) {
+    width: 175px;
+    height: 55px;
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 160px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+.signup-btn {
+  background-color: red;
+}
+
+.signin-btn {
+  background-color: blue;
+}

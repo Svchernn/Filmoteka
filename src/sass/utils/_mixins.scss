@@ -1,0 +1,28 @@
+@mixin font($fw: 500, $fs: 12px, $lh: 20px) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: calc($lh / $fs);
+}
+// calculation of the block width depending on the number in the line
+@mixin col-width($cols) {
+  flex-basis: calc((100% - (#{$cols} - 1) * var(--card-gap)) / #{$cols});
+}
+
+@mixin col-width-scroll($cols) {
+  max-width: calc(
+    (100% - (#{$cols} - 1) * var(--card-gap)-var(--scroll-width)) / #{$cols}
+  );
+}
+// Пример использования
+// @include columns-media($tablet, 3);
+// @include columns-media($desktop, 4);
+@mixin columns-media($minw, $cols) {
+  @media screen and (min-width: $minw) {
+    @include col-width($cols);
+  }
+  // если появляется полоса прокрутки то вью-порт шире контента на ширину полосы прокрутки
+  // может появиться полоса прокрутки
+  @media screen and (min-width: $minw) and (max-width: ($minw+25px)) {
+    @include col-width($cols);
+  }
+}

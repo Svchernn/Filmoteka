@@ -1,0 +1,89 @@
+@keyframes pagination-pulse {
+  from {
+    box-shadow: 0 0 0 0 var(--secondary-text-color);
+  }
+}
+
+.pagination {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  align-items: center;
+  &__svg {
+    fill: currentColor;
+  }
+  &__list {
+    padding: 0;
+    list-style: none;
+    margin: 0 auto;
+    display: flex;
+
+    justify-content: center;
+    gap: 3px;
+  }
+
+  &__button {
+    @include font(500, 16px, 12px);
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+
+    transition: background-color 0.4s var(--time-function),
+      color 0.4s var(--time-function), box-shadow 0.4s var(--time-function);
+
+    &:not(&_current):hover {
+      background-color: var(--secondary-text-color);
+      color: var(--primary-white-color);
+      box-shadow: 0 0 2px 1px rgba(45, 45, 45, 0.6);
+      animation: pagination-pulse 1s;
+      box-shadow: 0 0 0 18px #0000;
+    }
+
+    &_current {
+      background-color: var(--button-activ-color);
+      color: var(--primary-white-color);
+      &:hover {
+        background-color: var(--button-activ-color);
+        color: var(--primary-white-color);
+        box-shadow: none;
+      }
+    }
+
+    &_arrow {
+      background-color: var(--footer-background);
+    }
+    &_limit {
+      display: none;
+    }
+  }
+
+  &__space {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    &__button_limit {
+      display: flex;
+    }
+    &__space {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__space-text {
+      display: block;
+      transform: translateY(-25%);
+    }
+  }
+}

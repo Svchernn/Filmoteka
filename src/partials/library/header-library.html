@@ -1,0 +1,69 @@
+<header class="header-library container-header">
+  <div class="container">
+    <nav class="header__nav">
+      <a href="./index.html" class="header__logo link header__logo-library">
+        <svg class="header__logo-svg" width="24" height="24">
+          <use href="./images/svg/symbol-defs.svg#icon-film-from-header"></use>
+        </svg>
+        <span class="header__logo-text">Filmoteka</span></a
+      >
+
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <button
+            onclick="document.location='index.html'"
+            class="header__nav-autoriz"
+            type="button"
+            id="home"
+          >
+            Home
+          </button>
+        </li>
+        <li class="header__nav-item">
+          <button
+            onclick="document.location='library.html'"
+            class="header__nav-autoriz current"
+            type="button"
+            id="library"
+          >
+            My library
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <ul class="header__button-wrapper list">
+      <li>
+        <button
+          class="header__button button activ library-watched"
+          type="button"
+        >
+          Watched
+        </button>
+      </li>
+      <li>
+        <button class="header__button button activ library-queue" type="button">
+          Queue
+        </button>
+      </li>
+    </ul>
+    <!-- ====switch======= -->
+    <div class="switch switch-library">
+      <button id="toggle-theme-btn" class="toggle-theme-btn">
+        <svg width="28px" height="28px">
+          <use
+            class="moon visually-hidden"
+            id="toggle-theme-image-moon"
+            href="./images/svg/symbol-defs.svg#moon"
+          ></use>
+          <use
+            class="sun"
+            id="toggle-theme-image-sun"
+            href="./images/svg/symbol-defs.svg#sun"
+          ></use>
+        </svg>
+        <span class="visually-hidden">theme</span>
+      </button>
+    </div>
+    
+</header>

@@ -1,0 +1,372 @@
+.container-header {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: 230px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #303030;
+  opacity: 0.99;
+  box-shadow: -5px 10px 15px -6px var(--button-activ-color);
+
+  @media screen and (max-width: #{$tablet - 1}) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('../images/background/abstract-1x-mobile.jpg');
+
+    @media screen and (min-device-pixel-ratio: 2) and (max-width: #{$tablet - 1}),
+      screen and (min-resolution: 192dpi) and (max-width: #{$tablet - 1}),
+      screen and (min-resolution: 2dppx) and (max-width: #{$tablet - 1}) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url('../images/background/abstract-2x-mobile.jpg');
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('../images/background/abstract-1x-tablet.jpg');
+
+    @media screen and (min-device-pixel-ratio: 2) and (min-width: $tablet),
+      screen and (min-resolution: 192dpi) and (min-width: $tablet),
+      screen and (min-resolution: 2dppx) and (min-width: $tablet) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url('../images/background/abstract-2x-tablet.jpg');
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('/src/images/background/abstract-1x-Desktop.jpg');
+
+    @media screen and (min-device-pixel-ratio: 2) and (min-width: $desktop),
+      screen and (min-resolution: 192dpi) and (min-width: $desktop),
+      screen and (min-resolution: 2dppx) and (min-width: $desktop) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url('/src/images/background/abstract-2x-Desktop.jpg');
+    }
+  }
+}
+
+.header__nav {
+  position: relative;
+  padding-top: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media screen and (min-width: $tablet) {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.header__logo {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--primary-white-color);
+  transition: color, transform;
+  transition-duration: 500ms;
+  transition-timing-function: var(--time-function);
+
+  &:hover,
+  &:focus {
+    color: var(--button-activ-color);
+    transform: scale(1.1);
+    animation: transition 0.2s ease-out;
+
+    &:active {
+      box-shadow: 0 0 0 0 transparent;
+      transition: box-shadow 0.2s ease-in;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 7%;
+      left: 0%;
+      display: block;
+      width: 0px;
+      height: 86%;
+      opacity: 0;
+      background: white;
+      box-shadow: 0 0 15px 3px white;
+      transform: skewX(-20deg);
+      animation: shine 0.5s 0s linear;
+    }
+
+    .header__logo-svg:hover {
+      stroke: var(--button-activ-color);
+      box-shadow: 0 0 30px 0 transparentize(#ff6b08, 0.5);
+      fill: transparent;
+
+      box-shadow: 0 0 0 18px transparent;
+      animation: rotate 1s;
+    }
+  }
+}
+
+.header__logo-svg {
+  stroke: var(--primary-white-color);
+  fill: transparent;
+  @media screen and (max-width: 767px) {
+    margin-top: 12px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.header__logo-text {
+  display: none;
+  margin-left: 12px;
+  font-size: 30px;
+  line-height: 35.16px;
+  @media screen and (min-width: $tablet) {
+    display: inline;
+  }
+}
+
+.header_nav-button-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__nav-list {
+  display: flex;
+  width: 100%;
+  color: var(--primary-white-color);
+  padding-inline-start: 0px;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+  }
+}
+
+.header__nav-link {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.header__nav-item,
+.header__nav-button-out {
+  position: relative;
+  display: flex;
+  font-size: 12px;
+  line-height: 14px;
+  margin-left: 39px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  transition: transform, color;
+  transition-duration: 500ms;
+  transition-timing-function: var(--time-function);
+
+  &:hover,
+  &:focus {
+    color: var(--button-activ-color);
+    transform: scale(1.1);
+  }
+}
+
+.header__nav-button-out {
+  position: absolute;
+  top: 52px;
+  margin-bottom: 10px;
+  @media screen and (min-width: $tablet) {
+    margin-left: 1px;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+  }
+}
+
+.user_icon {
+  fill: none;
+  stroke: var(--button-activ-color);
+  margin-top: 14px;
+  width: 25px;
+  height: 25px;
+  @media screen and (min-width: $tablet) {
+    margin-top: 0px;
+    margin-left: 20px;
+  }
+}
+
+.current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 3px;
+  background: #ff001b;
+}
+
+.afterhome::after {
+  width: 35px;
+}
+
+.header__nav-autoriz {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+
+// =============
+.header__form {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-white-color);
+  transition-property: transform, color;
+  transition-duration: 500ms;
+  transition-timing-function: var(--time-function);
+
+  &:hover,
+  &:focus {
+    color: var(--button-activ-color);
+    transform: scale(1.1);
+  }
+  @media screen and (min-width: $tablet) {
+    margin-top: 25px;
+  }
+}
+
+.header__content {
+  position: relative;
+}
+
+.header__input {
+  min-width: 180px;
+  font-family: inherit; /* 1 */
+  font-size: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  margin: 0;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.2px solid currentColor;
+  outline: unset;
+  @media screen and (min-width: 375px) {
+    min-width: 230px;
+  }
+  @media screen and (min-width: $tablet) {
+    min-width: 336px;
+    height: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    min-width: 395px;
+  }
+}
+
+.header__form-btn {
+  position: absolute;
+  right: 0px;
+  top: -1px;
+  border: none;
+  background-color: transparent;
+  color: transparent;
+}
+
+input::placeholder {
+  @include font(800px, 12px, 400px);
+  color: inherit;
+}
+
+.failure-message {
+  width: max-content;
+  margin: 5px 1px;
+  color: #ff001b;
+  font-size: 9px;
+  @media screen and (min-width: $tablet) {
+    font-size: 13px;
+    margin: 5px auto;
+  }
+}
+
+.switch {
+  position: relative;
+}
+
+.toggle-theme-btn {
+  position: absolute;
+  right: 0px;
+  top: -5px;
+  fill: var(--button-activ-color);
+  background-color: transparent;
+  border: none;
+  opacity: 100%;
+
+  &:hover,
+  &:focus {
+    color: var(--button-activ-color);
+    transform: scale(1.1);
+    animation: transition 0.2s ease-out;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 7%;
+      left: 0%;
+      display: block;
+      width: 0px;
+      height: 86%;
+      opacity: 0;
+      background: white;
+      box-shadow: 0 0 15px 3px white;
+      transform: skewX(-20deg);
+      animation: shine 0.5s 0s linear;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    top: 15px;
+    right: 0px;
+  }
+}
+
+// .btnResetFilter {
+//   margin: 0 auto;
+//   width: 45px;
+//   outline: none;
+//   border: none;
+//   border-bottom: 1px solid var(--just-white);
+//   color: var(--just-white);
+//   background-color: inherit;
+//   cursor: pointer;
+//   text-align: center;
+// }

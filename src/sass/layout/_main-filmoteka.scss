@@ -1,0 +1,163 @@
+.gallery,
+.library {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--card-gap);
+  padding-top: 20px;
+
+  @media screen and (min-width: $tablet) {
+    column-gap: 32px;
+    padding-top: 60px;
+  }
+  @media screen and (min-width: $desktop) {
+    column-gap: var(--card-gap);
+  }
+}
+
+.gallery {
+  padding-top: 0;
+}
+
+.options-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.genre-select {
+  height: 40px;
+  border: 2px solid var(--button-activ-color);
+  border-radius: 5px;
+}
+
+.min-height {
+  min-height: 69vh;
+}
+
+.gallery-poster {
+  position: relative;
+
+  min-width: 280px;
+  min-height: 402px;
+  @media screen and (min-width: $tablet) {
+    //     @include columns-media($tablet, 2);
+    width: 336px;
+    height: 455px;
+  }
+  @media screen and (min-width: $desktop) {
+    //     @include columns-media($tablet, 3);
+    width: 394px;
+    height: 574px;
+  }
+}
+
+.gallery-poster-box {
+  @media screen and (max-width: 765px) {
+    width: 100%;
+    max-width: 728px;
+  }
+
+  cursor: pointer;
+  transition: scale 250ms var(--time-function),
+    filter 250ms var(--time-function);
+
+  &:hover {
+    scale: 1.05;
+    filter: drop-shadow(0 8px 13px #ff6b0199);
+  }
+}
+
+.gallery-poster-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.gallery-poster-title {
+  display: block;
+  min-width: 280px;
+  margin-top: 12px;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  @include font($fs: 12px, $lh: 14px);
+  @media screen and (min-width: $tablet) {
+    @include font($fs: 12px, $lh: 16px);
+    width: 336px;
+  }
+  @media screen and (min-width: $desktop) {
+    @include font($fs: 20px, $lh: 24px);
+    width: 394px;
+  }
+}
+
+.gallery-poster-text {
+  color: var(--button-activ-color);
+  @include font($fs: 12px, $lh: 14px);
+  @media screen and (min-width: $tablet) {
+    @include font($fs: 12px, $lh: 16px);
+  }
+  @media screen and (min-width: $desktop) {
+    @include font($fs: 18px, $lh: 20px);
+  }
+}
+
+.date-befor::before {
+  content: '';
+  display: inline-block;
+  background-color: var(--button-activ-color);
+  height: 8px;
+  width: 1px;
+  margin-right: 4px;
+  margin-left: 4px;
+
+  @media screen and (min-width: $desktop) {
+    height: 15px;
+    width: 2px;
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+}
+
+.gallery-poster-description {
+  display: flex;
+  align-items: center;
+  width: 280px;
+  margin-bottom: 4px;
+  @media screen and (min-width: $tablet) {
+    width: 336px;
+    margin-bottom: 16px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 394px;
+  }
+}
+
+.film-rating-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 16px;
+  margin-left: 8px;
+  border-radius: 5px;
+  background-color: var(--button-activ-color);
+
+  @media screen and (min-width: $desktop) {
+    width: 40px;
+    height: 20px;
+  }
+}
+
+.film-rating {
+  @include font($fs: 12px, $lh: 14px);
+  color: var(--primary-white-color);
+}
+// .gallery-poster-box {
+//   @include columns-media($mobile, 1);
+//   @include columns-media($tablet, 2);
+//   @include columns-media($desktop, 3);
+// }

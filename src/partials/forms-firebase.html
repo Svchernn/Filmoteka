@@ -1,0 +1,66 @@
+<div class="backdrop is_hidden login-data-modal">
+  <div class="modal__login modal-open">
+    <button type="button" class="modal-close-btn login-modal-close">
+      <svg class="modal-close-btn-icon" width="14px" height="14px">
+        <use href="./images/svg/symbol-defs.svg#icon-close"></use>
+      </svg>
+    </button>
+    <p class="login_title">Authorization</p>
+    <form class="login-form">
+      <label class="login__field">
+        <span class="login__desc">Email</span>
+        <input
+          class="log__input login-email"
+          required
+          type="email"
+          name="email"
+        />
+      </label>
+      <label class="login__field">
+        <span class="login__desc">Password</span>
+        <input
+          class="log__input login-password"
+          required
+          type="password"
+          name="password"
+        />
+      </label>
+      <button type="submit" class="button-modal log__btn">Sing in</button>
+    </form>
+  </div>
+</div>
+<div class="backdrop is_hidden reg-data-modal">
+  <div class="modal__reg modal-open">
+    <button type="button" class="modal-close-btn reg-modal-close">
+      <svg class="modal-close-btn-icon" width="14px" height="14px">
+        <use href="./images/svg/symbol-defs.svg#icon-close"></use>
+      </svg>
+    </button>
+    <p class="login_title">Registration</p>
+    <form class="reg-form">
+      <label class="reg__field">
+        <span class="reg__desc">Name</span>
+        <input class="reg__input reg-name" required type="text" name="name" />
+      </label>
+      <label class="reg__field">
+        <span class="reg__desc">Email</span>
+        <input
+          class="reg__input reg-email"
+          required
+          type="email"
+          name="email"
+        />
+      </label>
+      <label class="reg__field">
+        <span class="reg__desc">Password</span>
+        <input
+          class="reg__input reg-password"
+          required
+          type="password"
+          name="password"
+        />
+      </label>
+      <button type="submit" class="button-modal reg__btn">Sing up</button>
+    </form>
+  </div>
+</div>
